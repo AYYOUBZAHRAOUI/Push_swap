@@ -1,35 +1,49 @@
-CFLAGS = -Wall -Werror -Wextra
+# Compiler and flags
 CC = cc
-SRC_FILES = ft_atoi.c ft_bzero.c ft_isalnum.c ft_isalpha.c ft_isascii.c\
-	ft_isdigit.c ft_isprint.c ft_memchr.c ft_memcmp.c ft_memcpy.c ft_memmove.c\
-	ft_memset.c ft_strchr.c ft_strncmp.c ft_strlcat.c ft_strlcpy.c ft_strlen.c\
-	ft_strnstr.c ft_strrchr.c ft_tolower.c ft_toupper.c ft_calloc.c ft_strdup.c\
-	ft_substr.c ft_strjoin.c ft_strtrim.c ft_split.c ft_itoa.c ft_strmapi.c\
-	ft_striteri.c ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c\
-	ft_strcmp.c ft_lstnew_bonus.c ft_lstadd_front_bonus.c ft_lstsize_bonus.c \
-	ft_lstlast_bonus.c ft_lstadd_back_bonus.c ft_lstdelone_bonus.c \
-	ft_lstclear_bonus.c ft_lstiter_bonus.c ft_lstmap_bonus.c
-OBJ_FILES = $(SRC_FILES:.c=.o)
+CFLAGS = -Wall -Werror -Wextra
 
+# Directories
+INC_DIR = include
+SRC_DIR = src
+OBJ_DIR = obj
+
+# Source files
+SRC_FILES = $(wildcard $(SRC_DIR)/*.c)
+# wildcard : https://www.gnu.org/software/make/manual/html_node/Wildcard-Function.html
+
+# Object files
+OBJ_FILES = $(patsubst $(SRC_DIR)/%.c,$(OBJ_DIR)/%.o,$(SRC_FILES))
+# patsubst : https://www.gnu.org/software/make/manual/html_node/Text-Functions.html
+
+# Executable name
 NAME = libft.a
 
+# Target
 all: $(NAME)
 
+# Rule to create the library
 $(NAME): $(OBJ_FILES)
 	ar rcs $(NAME) $(OBJ_FILES)
 
-%.o: %.c libft.h
-	$(CC) $(CFLAGS) -c $< -o $@
-
+# Rule to create source files into object files
+$(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
+	@mkdir -p $(OBJ_DIR)
+# -p, --parents : no error if existing, make parent directories as needed, with their file modes unaffected by any -m option.
+	@$(CC) $(CFLAGS) -I$(INC_DIR) -c $< -o $@
+# The -I option in the @$(CC) $(CFLAGS) -I$(INC_DIR) -c $< -o $@ command specifies an additional directory to be searched for header files during compilation.
+	
+# Clean object files and the library
 clean:
-	rm -rf $(OBJ_FILES)
+	@rm -rf $(OBJ_DIR)
+	@echo "Object files have been removed."
 
+# Clean object files and the library
 fclean: clean
-	rm -rf $(NAME)
+	@rm -f $(NAME)
+	@echo "Executable has been $(NAME) removed."
 
+# rebuild everything
 re: fclean all
 
-# bonus: $(bonus_file_o)
-# 	ar rcs $(NAME) $(bonus_file_o)
-
+# .PHONY is a special target that is used to execute the specified commands regardless of the file modification time.
 .PHONY: all clean fclean re

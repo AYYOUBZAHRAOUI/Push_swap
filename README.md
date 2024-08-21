@@ -32,8 +32,30 @@ For example:
 ```
 
 ## Project Structure
-The project follows this directory structure:
-```  not yet implemented ```
+The project follows this directory structure:  
+```
+push_swap/
+├── Makefile
+├── include/
+│   └── push_swap.h
+├── src/
+|   ├── operations
+│   │   ├── basic_operations.c
+│   │   ├── sa_sb_ss_pa_pb.c
+│   │   ├── ra_rb_rr_rra_rrb.c
+│   │   └── rrr.c
+│   ├── main.c
+│   ├── error_handling.c
+│   ├── input_handling.c
+├── libft/
+│   ├── Makefile
+│   ├── include/
+│   │   └── libft.h
+│   ├── src/
+│   │   └── [libft source files]
+│   └── libft.a
+└── obj/  (created by Makefile)
+```
 
 ## Algorithm
 ``` not yet implemented ```
