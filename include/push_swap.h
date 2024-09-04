@@ -33,5 +33,9 @@ void rra(t_list **stacka);
 void rrb(t_list **stackb);
 void rrr(t_list **stacka, t_list **stackb);
 
+// algo functions
+int median_stack(t_list *stacka);
+int higher_int(t_list *stack);
+void first_algo(t_list *stacka);
 
 #endif

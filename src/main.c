@@ -24,7 +24,8 @@ int main(int argc, char **argv)
     stacka = creat_stacka(argc - 1, argv + 1);
     if (stacka == NULL)
         return (write(2, "error\n", 6), 1);
-    
+    // printf("median %i \n", median_stack(stacka));
+    first_algo(stacka);
     
 
     return (0);

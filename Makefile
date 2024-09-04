@@ -34,11 +34,14 @@ $(LIBFT):
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
 	@mkdir -p $(OBJ_DIR)
 	@mkdir -p $(OBJ_DIR)/operations
-	@$(CC) $(CFLAGS) -c $< -o $@
+	@$(CC) $(CFLAGS)  -I $(INC_DIR) -c $< -o $@
+
 
 # Rule to create executable
 $(NAME): $(OBJ_FILES)
-	@ar rcs $(NAME) $(OBJ_FILES) $(LIBFT)
+	$(CC) $(CFLAGS) -I $(INC_DIR)  $(OBJ_FILES) $(LIBFT) -o $(NAME)
+#	@ar rcs $(NAME) $(OBJ_FILES) $(LIBFT)
+ 	
 
 # Rule to clean object files
 clean:
