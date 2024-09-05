@@ -26,6 +26,7 @@ void sa(t_list **stacka);
 void sb(t_list **stackb);
 void ss(t_list **stacka, t_list **stackb);
 void pa(t_list **stacka, t_list **stackb);
+void pb(t_list **stackb, t_list **stacka);
 void ra(t_list **stacka);
 void rb(t_list **stackb);
 void rr(t_list **stacka, t_list **stackb);
@@ -34,8 +35,11 @@ void rrb(t_list **stackb);
 void rrr(t_list **stacka, t_list **stackb);
 
 // algo functions
-int median_stack(t_list *stacka);
+void sorting(t_list *stack);
+void two_nodes(t_list *stack);
+void three_nodes(t_list *stack);
+void five_nodes(t_list *stack);
 int higher_int(t_list *stack);
-void first_algo(t_list *stacka);
+int lower_int(t_list *stack);
 
 #endif

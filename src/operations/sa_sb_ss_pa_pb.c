@@ -23,17 +23,17 @@ void ss(t_list **stacka, t_list **stackb)
         write(1, "ss\n", 3);
 }
 
-// pa (push a): Take the first element at the top of b and put it at the top of a.
+// pa (push in a): Take the first element at the top of b and put it at the top of a.
 // Do nothing if b is empty.
-void pa(t_list **stackb, t_list **stacka)
+void pa(t_list **stacka, t_list **stackb)
 {
     if (push(stackb, stacka))
         write(1, "pa\n", 3);
 }
 
-// pb (push b): Take the first element at the top of a and put it at the top of b.
+// pb (push in b): Take the first element at the top of a and put it at the top of b.
 // Do nothing if a is empty.
-void pb(t_list **stacka, t_list **stackb)
+void pb(t_list **stackb, t_list **stacka)
 {
     if (push(stacka, stackb))
         write(1, "pb\n", 3);
