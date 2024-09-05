@@ -22,6 +22,7 @@ t_list *ft_lstnew_v2(int *content)
         node = ft_lstnew(content);
         if (node == NULL)
             return (free(content), NULL);
+        // node->index = 0;
         return (node);
     } 
 }
@@ -75,7 +76,7 @@ t_list *creat_stacka(int narg, char **argv)
         sh_lst = creat_short_lst(argv[i++], stacka);
         if (sh_lst == NULL)
             return (ft_lstclear(&stacka, free), NULL);
-        ft_lstadd_back(&stacka, sh_lst);
+        ft_lstadd_back(&stacka, sh_lst); // 1 have a one node and 2 have the problem
     }
     return (stacka);
 }

@@ -36,10 +36,15 @@ void rrr(t_list **stacka, t_list **stackb);
 
 // algo functions
 void sorting(t_list *stack);
-void two_nodes(t_list *stack);
-void three_nodes(t_list *stack);
+void two_three_nodes(t_list *stack);
 void five_nodes(t_list *stack);
 int higher_int(t_list *stack);
 int lower_int(t_list *stack);
+
+void indexing_by_order(t_list *stack);
+void array_sort(int *x);
+int index_of_higher(t_list *stack);
+void sorttohanderd(t_list *stack, int r_max);
+void big_pa(t_list *stack, t_list *stack_b);
 
 #endif

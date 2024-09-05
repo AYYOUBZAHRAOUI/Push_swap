@@ -9,27 +9,20 @@ void sorting(t_list *stack)
     stack_size = ft_lstsize(stack);
     if (stack_size == 1)
         return;
-    if (stack_size == 2)
-        two_nodes(stack);
-    else if (stack_size == 3)
-        three_nodes(stack);
+    else if (stack_size <= 3)
+        two_three_nodes(stack);
     else if (stack_size <= 5)
         five_nodes(stack);
+    else if (stack_size <= 100)
+        sorttohanderd(stack, 13);
+    else
+        sorttohanderd(stack, 20);
 }
+
 // sort one node :
 // just do nothing
 
-// handel two node :
-void two_nodes(t_list *stack)
-{
-
-    if (*((int *)(stack->content)) > *((int *)(stack->next->content)))
-        sa(&stack);
-    else
-        return;
-}
-
-// sort three node :
+// sort two three node :
 int higher_int(t_list *stack)
 {
     int x;
@@ -45,7 +38,7 @@ int higher_int(t_list *stack)
     return (x);
 }
 
-void three_nodes(t_list *stack)
+void two_three_nodes(t_list *stack)
 {
     int higher;
 
@@ -54,7 +47,8 @@ void three_nodes(t_list *stack)
         ra(&stack);
     else if (*((int *)(stack->next->content)) == higher)
         rra(&stack);
-    two_nodes(stack);
+    if (*((int *)(stack->content)) > *((int *)(stack->next->content)))
+        sa(&stack);
 }
 
 // sort 5 node
@@ -88,7 +82,7 @@ void five_nodes(t_list *stack)
             ra(&stack);
         pb(&stackb, &stack);
     }
-    three_nodes(stack);
+    two_three_nodes(stack);
     pa(&stack, &stackb);
     pa(&stack, &stackb);
 }

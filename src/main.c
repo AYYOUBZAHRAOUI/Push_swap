@@ -6,12 +6,11 @@ void show_stack(t_list *stack)
 
     while (stack != NULL)
     {
-        printf("%i\n", *((int *)(stack->content)));
+        printf("int = %i index = %i\n", *((int *)(stack->content)), stack->index);
         stack = stack->next;
         
     }
 }
-
 
 int main(int argc, char **argv)
 {
@@ -24,8 +23,10 @@ int main(int argc, char **argv)
     stacka = creat_stacka(argc - 1, argv + 1);
     if (stacka == NULL)
         return (write(2, "error\n", 6), 1);
+    // indexing_by_order(stacka);
+    // show_stack(stacka);
     sorting(stacka);
-    
+
 
     return (0);
 }

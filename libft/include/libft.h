@@ -6,7 +6,7 @@
 /*   By: ayzahrao <ayzahrao@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/27 17:22:13 by ayzahrao          #+#    #+#             */
-/*   Updated: 2024/06/02 19:04:50 by ayzahrao         ###   ########.fr       */
+/*   Updated: 2024/09/05 09:37:13 by ayzahrao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,7 @@ void	ft_putnbr_fd(int n, int fd);
 typedef struct t_list 
 {
 	void			*content;
+	int 			index;
 	struct t_list	*next;
 }	t_list;
 
