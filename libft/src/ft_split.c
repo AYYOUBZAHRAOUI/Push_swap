@@ -6,7 +6,7 @@
 /*   By: ayzahrao <ayzahrao@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/06 17:04:42 by ayzahrao          #+#    #+#             */
-/*   Updated: 2024/01/20 01:40:32 by ayzahrao         ###   ########.fr       */
+/*   Updated: 2024/09/06 12:40:41 by ayzahrao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ char	**ft_split(char const *s, char c)
 			element++;
 		i++;
 	}
-	p = (char **)malloc(8 * (element + 1));
+	p = (char **)malloc((element + 1) * sizeof(char *));
 	if (p == NULL)
 		return (NULL);
 	return (setfunc(p, s, c));

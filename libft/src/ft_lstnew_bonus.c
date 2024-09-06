@@ -6,7 +6,7 @@
 /*   By: ayzahrao <ayzahrao@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/16 05:38:41 by ayzahrao          #+#    #+#             */
-/*   Updated: 2024/09/05 14:47:21 by ayzahrao         ###   ########.fr       */
+/*   Updated: 2024/09/06 12:40:02 by ayzahrao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ t_list	*ft_lstnew(void *content)
 {
 	t_list	*head;
 
-	head = malloc(20);
+	head = malloc(sizeof(t_list));
 	if (head == NULL)
 		return (NULL);
 	head->content = content;

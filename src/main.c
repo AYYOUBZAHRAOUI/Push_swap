@@ -15,7 +15,6 @@ void show_stack(t_list *stack)
 int main(int argc, char **argv)
 {
     t_list *stacka;
-    //t_list *stackb = NULL;
 
     stacka = NULL;
     if (argc < 2)
@@ -23,8 +22,6 @@ int main(int argc, char **argv)
     stacka = creat_stacka(argc - 1, argv + 1);
     if (stacka == NULL)
         return (write(2, "error\n", 6), 1);
-    // indexing_by_order(stacka);
-    // show_stack(stacka);
     sorting(stacka);
 
 

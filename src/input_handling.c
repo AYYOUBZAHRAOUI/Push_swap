@@ -4,7 +4,7 @@ int *intalloc(int n)
 {
     int *x;
 
-    x = malloc(4);
+    x = malloc(sizeof(int));
     if (x == NULL)
         return (NULL);
     *x = n;

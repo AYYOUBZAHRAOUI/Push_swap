@@ -16,8 +16,6 @@
 // 10. else do rrb ot find the higher and pa
 // ??!! 7 8 9 10 in loop to empty the stalk_b
 
-// range 0 to 13
-
 void sorttohanderd(t_list *stack, int r_max)
 {	
 	t_list *stack_b;
@@ -67,9 +65,7 @@ void big_pa(t_list *stack, t_list *stack_b)
 	}
 }
 
-// this fuction take the header of linked list and indexing the list like an array
-// !! i don't thank i need thi function
-// i need just the index to higher int in stack b
+// this function take the header of linked list and return the index of higher int in the linked list
 int index_of_higher(t_list *stack)
 {
 	int i;
@@ -137,16 +133,6 @@ void array_sort(int *x)
 		i++;
 	}
 }
-
-
-
-
-
-
-
-
-
-
 
 
 // this function take the header of linked list and indexing by order for lower to higher

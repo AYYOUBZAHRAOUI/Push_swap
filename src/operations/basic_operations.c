@@ -27,8 +27,8 @@ int rotate(t_list **p)
     if (*p == NULL || (*p)->next == NULL)
         return (0);
     x = *p;
-    *p = (*p)->next;
     y = ft_lstlast(*p);
+    *p = (*p)->next;
     y->next = x;
     x->next = NULL;
     return (1);
