@@ -6,7 +6,7 @@
 /*   By: ayzahrao <ayzahrao@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/08 06:46:31 by ayzahrao          #+#    #+#             */
-/*   Updated: 2024/09/08 06:46:32 by ayzahrao         ###   ########.fr       */
+/*   Updated: 2024/09/08 15:54:53 by ayzahrao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ void	two_three_nodes(t_list **stack)
 	if (*((int *)((*stack)->content)) == higher)
 		ra(stack);
 	else if (*((int *)((*stack)->next->content)) == higher)
-		(stack);
+		rra(stack);
 	if (*((int *)((*stack)->content)) > *((int *)((*stack)->next->content)))
 		sa(stack);
 }

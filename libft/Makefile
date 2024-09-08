@@ -29,9 +29,9 @@ $(NAME): $(OBJ_FILES)
 # Rule to create source files into object files
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
 	@mkdir -p $(OBJ_DIR)
-# -p, --parents : no error if existing, make parent directories as needed, with their file modes unaffected by any -m option.
+# -p : no error if existing, make parent directories as needed
 	@$(CC) $(CFLAGS) -I $(INC_DIR) -c $< -o $@
-# The -I option in the @$(CC) $(CFLAGS) -I$(INC_DIR) -c $< -o $@ command specifies an additional directory to be searched for header files during compilation.
+# -I $(INC_DIR) : specify the directory where the header files are located
 	
 # Clean object files and the library
 clean:

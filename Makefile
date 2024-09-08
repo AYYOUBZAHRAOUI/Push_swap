@@ -8,14 +8,14 @@ INC_DIR = include
 LIBFT_DIR = libft
 OBJ_DIR = obj
 
-
 # Source files
 SRC_FILES = $(wildcard $(SRC_DIR)/*c)
 SRC_FILES += $(wildcard $(SRC_DIR)/operations/*c)
+# wildcard : https://www.gnu.org/software/make/manual/html_node/Wildcard-Function.html
 
 # Object files
 OBJ_FILES = $(patsubst $(SRC_DIR)/%.c,$(OBJ_DIR)/%.o,$(SRC_FILES))
-
+# patsubst : https://www.gnu.org/software/make/manual/html_node/Text-Functions.html
 
 # Executable name
 NAME = push_swap
@@ -35,13 +35,12 @@ $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
 	@mkdir -p $(OBJ_DIR)
 	@mkdir -p $(OBJ_DIR)/operations
 	@$(CC) $(CFLAGS)  -I $(INC_DIR) -c $< -o $@
-
+# -I $(LIBFT_DIR) : specify the directory where the header files are located
 
 # Rule to create executable
 $(NAME): $(OBJ_FILES)
 	$(CC) $(CFLAGS) -I $(INC_DIR)  $(OBJ_FILES) $(LIBFT) -o $(NAME)
-#	@ar rcs $(NAME) $(OBJ_FILES) $(LIBFT)
- 	
+# -I $(LIBFT_DIR) : specify the directory where the header files are located
 
 # Rule to clean object files
 clean:
