@@ -57,16 +57,17 @@ int rv_rotate(t_list **p)
 // push function
 // take two linked list x ,y
 // take the first element of x and put it at the top of y;
-
+// push take is **x and *y 
 int push(t_list **x, t_list **y)
 {
     t_list *z;
-
+    
     if (*x == NULL)
         return (0);
     z = *y;
     *y = *x;
     *x = (*x)->next;
     (*y)->next = z;
+    
     return (1);
 }

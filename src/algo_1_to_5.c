@@ -1,12 +1,15 @@
 #include "../include/push_swap.h"
 
+
+
 // sort function
 // this fuction calculate the size of stack and choose sorting algo
-void sorting(t_list *stack)
+void sorting(t_list **stack)
 {
     int stack_size;
 
-    stack_size = ft_lstsize(stack);
+    stack_size = ft_lstsize(*stack);
+    
     if (stack_size == 1)
         return;
     else if (stack_size <= 3)
@@ -14,9 +17,11 @@ void sorting(t_list *stack)
     else if (stack_size <= 5)
         five_nodes(stack);
     else if (stack_size <= 100)
-        sorttohanderd(stack, 13);
+        sorttohanderd(stack, 15);
     else
-        sorttohanderd(stack, 20);
+        sorttohanderd(stack, 30);
+    // show_stack(*stack);
+    ft_lstclear(stack, free);
 }
 
 // sort one node :
@@ -38,17 +43,17 @@ int higher_int(t_list *stack)
     return (x);
 }
 
-void two_three_nodes(t_list *stack)
+void two_three_nodes(t_list **stack)
 {
     int higher;
 
-    higher = higher_int(stack);
-    if (*((int *)(stack->content)) == higher)
-        ra(&stack);
-    else if (*((int *)(stack->next->content)) == higher)
-        rra(&stack);
-    if (*((int *)(stack->content)) > *((int *)(stack->next->content)))
-        sa(&stack);
+    higher = higher_int(*stack);
+    if (*((int *)((*stack)->content)) == higher)
+        ra(stack);
+    else if (*((int *)((*stack)->next->content)) == higher)
+        rra(stack);
+    if (*((int *)((*stack)->content)) > *((int *)((*stack)->next->content)))
+        sa(stack);
 }
 
 // sort 5 node
@@ -67,7 +72,7 @@ int lower_int(t_list *stack)
     return (lower);
 }
 
-void five_nodes(t_list *stack)
+void five_nodes(t_list **stack)
 {
     t_list *stackb;
     int lower;
@@ -75,14 +80,17 @@ void five_nodes(t_list *stack)
 
     i = 2;
     stackb = NULL;
+    lower = lower_int(*stack);
+    if (*((int *)((ft_lstlast(*stack))->content)) == lower)
+        rra(stack);
     while (i--)
     {
-        lower = lower_int(stack);
-        while (lower != *((int *)(stack->content)))
-            ra(&stack);
-        pb(&stackb, &stack);
+        lower = lower_int(*stack);
+        while (lower != *((int *)((*stack)->content)))
+            ra(stack);
+        pb(&stackb, stack);
     }
     two_three_nodes(stack);
-    pa(&stack, &stackb);
-    pa(&stack, &stackb);
+    pa(stack, &stackb);
+    pa(stack, &stackb);
 }

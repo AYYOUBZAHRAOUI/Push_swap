@@ -22,9 +22,9 @@ int main(int argc, char **argv)
     stacka = creat_stacka(argc - 1, argv + 1);
     if (stacka == NULL)
         return (write(2, "error\n", 6), 1);
-    sorting(stacka);
-
-
+    sorting(&stacka);
+    // ft_lstclear(&stacka, free);
+    // system("leaks push_swap");
     return (0);
 }
 

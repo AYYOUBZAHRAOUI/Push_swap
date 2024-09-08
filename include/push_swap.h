@@ -35,16 +35,31 @@ void rrb(t_list **stackb);
 void rrr(t_list **stacka, t_list **stackb);
 
 // algo functions
-void sorting(t_list *stack);
-void two_three_nodes(t_list *stack);
-void five_nodes(t_list *stack);
+void sorting(t_list **stack);
+void two_three_nodes(t_list **stack);
+void five_nodes(t_list **stack);
 int higher_int(t_list *stack);
 int lower_int(t_list *stack);
 
 void indexing_by_order(t_list *stack);
 void array_sort(int *x);
 int index_of_higher(t_list *stack);
-void sorttohanderd(t_list *stack, int r_max);
-void big_pa(t_list *stack, t_list *stack_b);
+void sorttohanderd(t_list **stack, int r_max);
+void big_pa(t_list **stack, t_list **stack_b);
+
+void show_stack(t_list *stack);
+
+
+// void quick_sort(int *arr, int low, int high);
+// void sw_ap(int *a, int *b);
+// int partition(int *arr, int low, int high);
+// void quick_sort(int *arr, int low, int high);
+// void indexing_by_order(t_list *stack);
+// int index_of_higher(t_list *stack);
+// void big_pa(t_list **stack, t_list **stack_b);
+// int higher_int(t_list *stack);
+// int lower_int(t_list *stack);
+// int find_max_index(t_list *stack);
+
 
 #endif
