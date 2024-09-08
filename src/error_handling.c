@@ -6,7 +6,7 @@
 /*   By: ayzahrao <ayzahrao@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/08 06:39:38 by ayzahrao          #+#    #+#             */
-/*   Updated: 2024/09/08 06:40:40 by ayzahrao         ###   ########.fr       */
+/*   Updated: 2024/09/08 19:47:57 by ayzahrao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,6 @@ int	verif1(char *x)
 {
 	int	i;
 
-	if (!(1 <= ft_strlen(x) && ft_strlen(x) <= 11))
-		return (0);
 	i = 0;
 	if (x[i] == '-')
 	{
