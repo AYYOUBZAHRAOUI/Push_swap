@@ -6,7 +6,7 @@
 /*   By: ayzahrao <ayzahrao@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/27 17:21:09 by ayzahrao          #+#    #+#             */
-/*   Updated: 2024/01/20 22:50:34 by ayzahrao         ###   ########.fr       */
+/*   Updated: 2024/09/08 05:37:34 by ayzahrao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,10 +26,8 @@ void	*ft_calloc(size_t count, size_t size)
 		return (p);
 	}
 	total = count * size;
-
 	if (total / count != size)
 		return (NULL);
-
 	p = malloc(total);
 	if (p == NULL)
 		return (NULL);

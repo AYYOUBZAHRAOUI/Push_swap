@@ -6,7 +6,7 @@
 /*   By: ayzahrao <ayzahrao@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/27 17:21:03 by ayzahrao          #+#    #+#             */
-/*   Updated: 2024/06/01 17:45:28 by ayzahrao         ###   ########.fr       */
+/*   Updated: 2024/09/08 05:40:59 by ayzahrao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 long int	ft_atoi(const char *str)
 {
-	int	i;
-	int	sign;
+	int			i;
+	int			sign;
 	long int	x;
 
 	x = 0;

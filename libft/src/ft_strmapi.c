@@ -6,16 +6,16 @@
 /*   By: ayzahrao <ayzahrao@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/13 23:26:44 by ayzahrao          #+#    #+#             */
-/*   Updated: 2024/01/20 05:37:24 by ayzahrao         ###   ########.fr       */
+/*   Updated: 2024/09/08 05:40:30 by ayzahrao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/libft.h"
 
-void   *ft_calloc(size_t count, size_t size)
+void	*ft_calloc(size_t count, size_t size)
 {
-	void    *p;
-	size_t  total;
+	void	*p;
+	size_t	total;
 
 	if (count == 0 || size == 0)
 	{
