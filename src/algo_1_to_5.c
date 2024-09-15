@@ -6,7 +6,7 @@
 /*   By: ayzahrao <ayzahrao@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/08 06:46:31 by ayzahrao          #+#    #+#             */
-/*   Updated: 2024/09/08 15:54:53 by ayzahrao         ###   ########.fr       */
+/*   Updated: 2024/09/15 19:10:27 by ayzahrao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	sorting(t_list **stack)
 
 	stack_size = ft_lstsize(*stack);
 	if (stack_size == 1 || stack_is_sorted(*stack))
-		return ;
+		;
 	else if (stack_size <= 3)
 		two_three_nodes(stack);
 	else if (stack_size <= 5)

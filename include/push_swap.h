@@ -6,7 +6,7 @@
 /*   By: ayzahrao <ayzahrao@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/08 05:28:48 by ayzahrao          #+#    #+#             */
-/*   Updated: 2024/09/08 05:31:01 by ayzahrao         ###   ########.fr       */
+/*   Updated: 2024/09/11 16:21:36 by ayzahrao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 
 # include <limits.h>
 # include <unistd.h>
-# include <stdio.h>
 # include "../libft/include/libft.h"
 
 // error_handling.c file have 2 function
@@ -52,7 +51,6 @@ int		higher_int(t_list *stack);
 int		lower_int(t_list *stack);
 
 void	indexing_by_order(t_list *stack);
-void	array_sort(int *x);
 int		index_of_higher(t_list *stack);
 void	sorttohanderd(t_list **stack, int r_max);
 void	big_pa(t_list **stack, t_list **stack_b);

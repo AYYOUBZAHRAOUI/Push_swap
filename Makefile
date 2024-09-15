@@ -1,3 +1,15 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: ayzahrao <ayzahrao@student.1337.ma>        +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2024/09/15 19:10:13 by ayzahrao          #+#    #+#              #
+#    Updated: 2024/09/15 19:10:14 by ayzahrao         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 # Compiler and flags
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
@@ -9,9 +21,17 @@ LIBFT_DIR = libft
 OBJ_DIR = obj
 
 # Source files
-SRC_FILES = $(wildcard $(SRC_DIR)/*c)
-SRC_FILES += $(wildcard $(SRC_DIR)/operations/*c)
-# wildcard : https://www.gnu.org/software/make/manual/html_node/Wildcard-Function.html
+SRC_FILES = src/algo_1_to_5.c \
+			src/algo_morethan5.c \
+			src/error_handling.c \
+			src/input_handling.c \
+			src/main.c \
+			src/operations/basic_operations.c \
+			src/operations/ra_rb_rr_rra_rrb.c \
+			src/operations/rrr.c \
+			src/operations/sa_sb_ss_pa_pb.c
+# SRC_FILES =	&(wildcard $(SRC_DIR)/*.c)
+# SRC_FILES +=	&(wildcard $(SRC_DIR)/operations/*.c)
 
 # Object files
 OBJ_FILES = $(patsubst $(SRC_DIR)/%.c,$(OBJ_DIR)/%.o,$(SRC_FILES))
@@ -58,5 +78,8 @@ fclean: clean
 # Rule to recompile
 re: fclean all
 
+test:
+	@echo $(SRC_FILES)
+	@echo $(OBJ_FILES)
 # Phony targets
 .PHONY: all clean fclean re
